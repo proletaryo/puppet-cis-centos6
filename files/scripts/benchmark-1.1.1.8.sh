@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.8    Ensure mounting of FAT filesystems is disabled (Scored)
+
 MODULE=fat
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 

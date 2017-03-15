@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.5    Ensure mounting of hfsplus filesystems is disabled (Scored)
+
 MODULE=hfsplus
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 

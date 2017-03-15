@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.2    Ensure separate partition exists for /tmp (Scored)
+
 MOUNTPOINT=/tmp
 RESULT=$(/bin/mount | /bin/grep "[[:space:]+]$MOUNTPOINT[[:space:]+]")
 

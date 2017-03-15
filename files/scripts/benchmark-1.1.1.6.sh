@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.6    Ensure mounting of squashfs filesystems is disabled (Scored)
+
 MODULE=squashfs
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 

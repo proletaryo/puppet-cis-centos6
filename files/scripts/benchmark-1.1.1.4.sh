@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.4    Ensure mounting of hfs filesystems is disabled (Scored)
+
 MODULE=hfs
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 

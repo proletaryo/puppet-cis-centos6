@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.3    Ensure nodev option set on /tmp partition (Scored)
+
 MOUNTPOINT=/tmp
 OPTION=nodev
 RESULT=$(/bin/mount | /bin/grep -P "\s+$MOUNTPOINT\s+.+$OPTION")

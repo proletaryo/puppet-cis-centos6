@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.5    Ensure noexec option set on /tmp partition (Scored)
+
 MOUNTPOINT=/tmp
 OPTION=noexec
 RESULT=$(/bin/mount | /bin/grep -P "\s+$MOUNTPOINT\s+.+$OPTION")

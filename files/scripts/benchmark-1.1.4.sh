@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.4    Ensure nosuid option set on /tmp partition (Scored)
+
 MOUNTPOINT=/tmp
 OPTION=nosuid
 RESULT=$(/bin/mount | /bin/grep -P "\s+$MOUNTPOINT\s+.+$OPTION")

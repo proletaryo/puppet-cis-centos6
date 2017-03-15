@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.3    Ensure mounting of jffs2 filesystems is disabled (Scored)
+
 MODULE=jffs2
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 

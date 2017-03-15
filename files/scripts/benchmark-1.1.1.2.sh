@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.2    Ensure mounting of freevxfs filesystems is disabled (Scored)
+
 MODULE=freevxfs
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 

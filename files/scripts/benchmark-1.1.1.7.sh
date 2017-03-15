@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 1.1.1.7    Ensure mounting of udf filesystems is disabled (Scored)
+
 MODULE=udf
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 
