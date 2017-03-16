@@ -6,7 +6,7 @@ RESULT=$(/sbin/chkconfig --list autofs 2>/dev/null | /bin/grep -P '\d:on' )
 
 if [[ -z $RESULT ]]
 then
-  echo 'cis_benchmark_1_1_22=pass'
+  echo 'cis_benchmark_1_1_22=passed'
 else
-  echo 'cis_benchmark_1_1_22=fail'
+  echo 'cis_benchmark_1_1_22=failed'
 fi

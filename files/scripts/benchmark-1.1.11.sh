@@ -7,7 +7,7 @@ RESULT=$(/bin/mount | /bin/grep "[[:space:]+]$MOUNTPOINT[[:space:]+]")
 
 if [[ $RESULT ]]
 then
-  echo 'cis_benchmark_1_1_11=pass'
+  echo 'cis_benchmark_1_1_11=passed'
 else
-  echo 'cis_benchmark_1_1_11=fail'
+  echo 'cis_benchmark_1_1_11=failed'
 fi

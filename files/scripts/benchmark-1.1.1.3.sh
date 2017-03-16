@@ -11,10 +11,10 @@ then
   RESULT=$(/bin/grep "install[[:space:]+]$MODULE[[:space:]+]/bin/true" /etc/modprobe.d/*)
   if [[ $RESULT ]]
   then
-    echo 'cis_benchmark_1_1_1_3=pass'
+    echo 'cis_benchmark_1_1_1_3=passed'
   else
-    echo 'cis_benchmark_1_1_1_3=fail'
+    echo 'cis_benchmark_1_1_1_3=failed'
   fi
 else
-  echo 'cis_benchmark_1_1_1_3=fail'
+  echo 'cis_benchmark_1_1_1_3=failed'
 fi

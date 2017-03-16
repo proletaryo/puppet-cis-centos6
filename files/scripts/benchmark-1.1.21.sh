@@ -12,7 +12,7 @@ RESULT=$(/bin/df --local -P | /bin/awk '{ if (NR!=1) print $6 }' | \
 
 if [[ -z $RESULT ]]
 then
-  echo 'cis_benchmark_1_1_21=pass'
+  echo 'cis_benchmark_1_1_21=passed'
 else
-  echo 'cis_benchmark_1_1_21=fail'
+  echo 'cis_benchmark_1_1_21=failed'
 fi
