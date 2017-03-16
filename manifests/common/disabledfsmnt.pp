@@ -10,12 +10,14 @@
 define ciscentos6::common::disabledfsmnt ( $benchmark_number, $benchmark_status) {
   if defined('$benchmark_status') {
     if $benchmark_status == 'failed' {   # remediate
-      file { '/etc/modprobe.d/CIS.conf':
-        ensure => 'file',
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0600',
-        source => 'puppet:///modules/ciscentos6/os/etc/modprobe.d/CIS.conf',
+      if ! defined(File['/etc/modprobe.d/CIS.conf']) {
+        file { '/etc/modprobe.d/CIS.conf':
+          ensure => 'file',
+          owner  => 'root',
+          group  => 'root',
+          mode   => '0600',
+          source => 'puppet:///modules/ciscentos6/os/etc/modprobe.d/CIS.conf',
+        }
       }
       notify{ "CIS Benchmark $benchmark_number : remediated":
         require  => File['/etc/modprobe.d/CIS.conf'],
