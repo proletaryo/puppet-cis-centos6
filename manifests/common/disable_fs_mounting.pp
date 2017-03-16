@@ -7,7 +7,7 @@
 # 1.1.1.6    Ensure mounting of squashfs filesystems is disabled (Scored)
 # 1.1.1.7    Ensure mounting of udf filesystems is disabled (Scored)
 # 1.1.1.8    Ensure mounting of FAT filesystems is disabled (Scored)
-define ciscentos6::common::disabledfsmnt ( $benchmark_number, $benchmark_status) {
+define ciscentos6::common::disable_fs_mounting ( $benchmark_number, $benchmark_status) {
   if defined('$benchmark_status') {
     if $benchmark_status == 'failed' {   # remediate
       if ! defined(File['/etc/modprobe.d/CIS.conf']) {
