@@ -2,7 +2,7 @@
 
 # 1.1.1.8    Ensure mounting of FAT filesystems is disabled (Scored)
 
-MODULE=fat
+MODULE=vfat
 RESULT=$(/sbin/lsmod | /bin/grep $MODULE)
 
 if [[ -z $RESULT ]]
