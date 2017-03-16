@@ -2,6 +2,13 @@
 # 1.1.3    Ensure nodev option set on /tmp partition (Scored)
 # 1.1.4    Ensure nosuid option set on /tmp partition (Scored)
 # 1.1.5    Ensure noexec option set on /tmp partition (Scored)
+# 1.1.8    Ensure nodev option set on /var/tmp partition (Scored)
+# 1.1.9    Ensure nosuid option set on /var/tmp partition (Scored)
+# 1.1.10    Ensure noexec option set on /var/tmp partition (Scored)
+# 1.1.14    Ensure nodev option set on /home partition (Scored)
+# 1.1.15    Ensure nodev option set on /dev/shm partition (Scored)
+# 1.1.16    Ensure nosuid option set on /dev/shm partition (Scored)
+# 1.1.17    Ensure noexec option set on /dev/shm partition (Scored)
 define ciscentos6::common::set_mount_options (
   $benchmark_number, $benchmark_status, $mount_options
 ) {
