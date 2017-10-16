@@ -24,7 +24,6 @@ PARAMS_32=(
 
 if [ ${MACHINE_TYPE} == 'x86_64' ]
  then
-# 64-bit stuff here
    for P in ${PARAMS_64[@]}
     do
       RESULT=$( /bin/grep -P $P $CONFIG_FILE )
@@ -43,7 +42,6 @@ if [ ${MACHINE_TYPE} == 'x86_64' ]
     fi
 
 else
-  # 32-bit stuff here
   for P in ${PARAMS_32[@]}
      do
        RESULT=$( /bin/grep -P $P $CONFIG_FILE )
