@@ -21,7 +21,6 @@ define ciscentos6::common::set_file_parameter (
     }
   }
   else {
-    fail("Error: Externals facts were not defined. Make sure facter version is 1.7+ and \
-externals facts are in /etc/facter/facts.d/)")
+    fail('Error: Externals facts were not defined. Make sure facter version is 1.7+ and externals facts are in /etc/facter/facts.d/)')
   }
 }
