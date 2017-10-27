@@ -1,6 +1,7 @@
 # NOTE: common resource for these benchmarks
-# 5.2.2    Ensure SSH Protocol is set to 2 (Scored)
-# 5.2.3    Ensure SSH LogLevel is set to INFO (Scored)
+# 5.2.2     Ensure SSH Protocol is set to 2 (Scored)
+# 5.2.3     Ensure SSH LogLevel is set to INFO (Scored)
+# 5.4.1.1   Ensure password expiration is 90 days or less (Scored)
 define ciscentos6::common::set_file_parameter (
   $benchmark_number, $benchmark_status, $filepath, $parameter
 ) {
