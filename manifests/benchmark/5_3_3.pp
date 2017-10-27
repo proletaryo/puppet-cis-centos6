@@ -1,7 +1,7 @@
 # 5.3.3    Ensure password reuse is limited (Scored)
   if ! defined(Exec['/etc/pam.d/password-auth']) {
-    if defined('$cis_benchmark_5_3_2') {
-      if $cis_benchmark_5_3_2 == 'failed' {   # remediate
+    if defined('$cis_benchmark_5_3_3') {
+      if $cis_benchmark_5_3_3 == 'failed' {   # remediate
         $addline = 'password sufficient pam_unix.so remember=5'
         $regex = '^password.+sufficient.+pam_unix.so'
         exec {'/etc/pam.d/password-auth':
@@ -28,7 +28,7 @@
         }
       }
       else {
-        notice( "CIS Benchmark 5.3.2 : $cis_benchmark_5_3_2")
+        notice( "CIS Benchmark 5.3.3 : $cis_benchmark_5_3_3")
       }
     }
     else {
@@ -36,9 +36,9 @@
     }
   }
   else {
-    ciscentos6::common::just_relay_fact_value { '5.3.2':
-      benchmark_number => '5.3.2',
-      benchmark_status => $cis_benchmark_5_3_2,
+    ciscentos6::common::just_relay_fact_value { '5.3.3':
+      benchmark_number => '5.3.3',
+      benchmark_status => $cis_benchmark_5_3_3,
     }
   }
 }
