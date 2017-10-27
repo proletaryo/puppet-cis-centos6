@@ -12,7 +12,7 @@ define ciscentos6::common::set_file_permissions ( $benchmark_number, $benchmark_
     if $benchmark_status == 'failed' {   # remediate
       file { $name:
       	owner => 'root',
-		group => 'root',
+		    group => 'root',
         mode => $permissions,
       }
 
