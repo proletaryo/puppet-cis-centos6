@@ -1,6 +1,5 @@
 # 4.2.1.3    Ensure rsyslog default file permissions configured (Scored)
 class ciscentos6::benchmark::4_2_1_3 {
-
   if ! defined(Ciscentos6::Common::Set_file_parameter['/etc/rsyslog.conf']) {
     ciscentos6::common::set_file_parameter { '/etc/rsyslog.conf':
       benchmark_number => '4.2.1.3',

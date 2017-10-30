@@ -1,5 +1,5 @@
 # 4.2.1.1    Ensure rsyslog Service is enabled (Scored)
-  if ! defined(Exec['enable auditd']) {
+  if ! defined(Exec['enable rsyslog']) {
     if defined('$cis_benchmark_4_2_1_1') {
       if $cis_benchmark_4_2_1_1 == 'failed' {   # remediate
         exec {'enable rsyslog':
