@@ -5,16 +5,14 @@ class ciscentos6::benchmark::5_1_8 {
   if ! defined(Ciscentos6::Common::Set_file_permissions[$set_permission_files]) {
     file { $remove_files:
       ensure => absent,
-    }
+    } ->
     file { $set_permission_files:
       ensure => present,
-      require => File[$remove_files],
-    }
+    } ->
     ciscentos6::common::set_file_permissions { $set_permission_files:
       benchmark_number => '5.1.8',
       benchmark_status => $cis_benchmark_5_1_8,
       permissions => 'og-rwx',
-      require => File[$set_permission_files],
     }
   }
   else {

@@ -5,9 +5,8 @@ class ciscentos6::benchmark::5_4_1_3 {
       exec {'useradd -D -f 30':
         command => "useradd -D -f 30",
         path    => "/bin:/sbin",
-      }
+      } ->
       notify{ "CIS Benchmark 5.4.1.3 : remediated":
-        require => Exec['useradd -D -f 30'],
         loglevel => notice,
       }
     }

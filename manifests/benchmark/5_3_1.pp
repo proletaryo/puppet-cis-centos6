@@ -8,27 +8,23 @@ class ciscentos6::benchmark::5_3_1 {
         command => "echo $addline >> /etc/pam.d/password-auth",
         path    => "/bin:/sbin",
         unless  => "grep -P $regex /etc/pam.d/password-auth",
-      }
-      exec {'/etc/pam.d/system-auth':
-        command => "echo $addline >> /etc/pam.d/system-auth",
-        path    => "/bin:/sbin",
-        unless  => "grep -P $regex /etc/pam.d/system-auth",
-        require => Exec['etc/pam.d/password-auth'],
-      }
+      } ->
       exec {'etc/pam.d/password-auth':
         command => "sed -i '/$regex/c\\$addline' /etc/pam.d/password-auth",
         path    => "/bin:/sbin",
         onlyif  => "grep -P $regex /etc/pam.d/password-auth",
-        require => Exec['/etc/pam.d/password-auth'],
-      }
+      } ->
+      exec {'/etc/pam.d/system-auth':
+        command => "echo $addline >> /etc/pam.d/system-auth",
+        path    => "/bin:/sbin",
+        unless  => "grep -P $regex /etc/pam.d/system-auth",
+      } ->
       exec {'etc/pam.d/system-auth':
         command => "sed -i '/$regex/c\\$addline' /etc/pam.d/system-auth",
         path    => "/bin:/sbin",
         onlyif  => "grep -P $regex /etc/pam.d/system-auth",
-        require => Exec['/etc/pam.d/system-auth'],
-      }
+      } ->
       notify{ "CIS Benchmark 5.3.1 : remediated":
-        require  => Exec['etc/pam.d/system-auth'],
         loglevel => notice,
       }
     }

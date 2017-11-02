@@ -8,11 +8,10 @@ define ciscentos6::common::add_file_line (
     command => "sed -i '/$regex/c\\$addline' $filepath",
     path    => "/bin:/sbin",
     onlyif  => "grep -P $regex $filepath",
-  }
+  } ->
   exec{'add $filepath':
     command => "echo $addline >> $filepath",
     path    => "/bin:/sbin",
     unless  => "grep -P $regex $filepath",
-    require => Exec['edit $filepath'],
   }
 }

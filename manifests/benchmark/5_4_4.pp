@@ -5,14 +5,12 @@ class ciscentos6::benchmark::5_4_4 {
       augeas { '/etc/bashrc':
         context => '/files/etc/bashrc',
         changes => 'set umask 027',
-      }
+      } ->
       augeas { '/etc/profile':
         context => '/files/etc/profile',
         changes => 'set umask 027',
-        require  => Augeas['/etc/bashrc'],
-      }
+      } ->
       notify{ "CIS Benchmark 5.4.4 : remediated":
-        require  => Augeas['/etc/profile'],
         loglevel => notice,
       }
     }

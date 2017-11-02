@@ -5,9 +5,8 @@ class ciscentos6::benchmark::5_4_3 {
       exec {'usermod -g 0 root':
         command => "usermod -g 0 root",
         path    => "/bin:/sbin",
-      }
+      } ->
       notify{ "CIS Benchmark 5.4.3 : remediated":
-        require => Exec['usermod -g 0 root'],
         loglevel => notice,
       }
     }
