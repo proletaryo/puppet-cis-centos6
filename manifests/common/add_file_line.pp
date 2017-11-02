@@ -1,4 +1,5 @@
 # NOTE: common resource for these benchmarks
+# 2.2.15    Ensure mail transfer agent is configured for local-only mode (Scored)
 # 3.1.1    Ensure IP forwarding is disabled (Scored)
 # 3.1.2    Ensure IP forwarding is disabled (Scored)
 # 3.2.1    Ensure source routed packets are not accepted (Scored)
