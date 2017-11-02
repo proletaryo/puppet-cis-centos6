@@ -13,10 +13,8 @@ define ciscentos6::common::set_file_parameter (
       augeas { $name:
         context => $filepath,
         changes => $parameter,
-      }
-
+      } ->
       notify{ "CIS Benchmark $benchmark_number : remediated":
-        require  => Augeas[$name],
         loglevel => notice,
       }
     }

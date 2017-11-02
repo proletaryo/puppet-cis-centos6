@@ -7,7 +7,6 @@ class ciscentos6::benchmark::5_2_2 {
       benchmark_status => $cis_benchmark_5_2_2,
       filepath => '/files/etc/ssh/sshd_config',
       parameter => 'set Protocol 2',
-      ],
     }
   }
   else {
