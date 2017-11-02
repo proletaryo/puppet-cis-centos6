@@ -3,7 +3,7 @@ class ciscentos6::benchmark::5_4_1_3 {
   if ! defined(Exec['useradd -D -f 30']) {
     exec {'useradd -D -f 30':
       command => "useradd -D -f 30",
-      path    => "/bin",
+      path    => "/bin:/sbin",
     }
   }
   else {

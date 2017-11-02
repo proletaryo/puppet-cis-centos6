@@ -4,7 +4,7 @@
       if $cis_benchmark_4_2_4 == 'failed' {   # remediate
         exec {'set log permissions':
           command => "find /var/log -type f -exec chmod g-wx,o-rwx {} +",
-          path    => "/bin",
+          path    => "/bin:/sbin",
         }
       }
       else {

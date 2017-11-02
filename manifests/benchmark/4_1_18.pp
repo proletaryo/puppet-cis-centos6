@@ -5,7 +5,7 @@
         $line1 = '-e 2'
         exec {'line1':
           command => "echo $line1 >> /etc/audit/audit.rules",
-          path    => "/bin",
+          path    => "/bin:/sbin",
           unless  => "grep -P $line1 /etc/audit/audit.rules",
         }
       }

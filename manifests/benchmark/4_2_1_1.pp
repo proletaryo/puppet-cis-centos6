@@ -4,7 +4,7 @@
       if $cis_benchmark_4_2_1_1 == 'failed' {   # remediate
         exec {'enable rsyslog':
           command => "chkconfig rsyslog on",
-          path    => "/bin",
+          path    => "/bin:/sbin",
         }
       }
       else {

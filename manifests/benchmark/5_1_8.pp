@@ -8,6 +8,7 @@ class ciscentos6::benchmark::5_1_8 {
     }
     file { $set_permission_files:
       ensure => present,
+      require => File[$remove_files],
     }
     ciscentos6::common::set_file_permissions { $set_permission_files:
       benchmark_number => '5.1.8',

@@ -4,7 +4,7 @@
       if $cis_benchmark_4_1_2 == 'failed' {   # remediate
         exec {'enable auditd':
           command => "chkconfig auditd on",
-          path    => "/bin",
+          path    => "/bin:/sbin",
         }
       }
       else {

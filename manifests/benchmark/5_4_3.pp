@@ -4,7 +4,7 @@ class ciscentos6::benchmark::5_4_3 {
   if ! defined(Exec['usermod -g 0 root']) {
     exec {'usermod -g 0 root':
       command => "usermod -g 0 root",
-      path    => "/bin",
+      path    => "/bin:/sbin",
     }
   }
   else {
