@@ -1,4 +1,6 @@
 # NOTE: common resource for these benchmarks
+# 3.4.4    Ensure permissions on /etc/hosts.allow are configured (Scored)
+# 3.4.5    Ensure permissions on /etc/hosts.deny are configured (Scored)
 # 5.1.2		Ensure permissions on /etc/crontab are configured (Scored)
 # 5.1.3		Ensure permissions on /etc/cron.hourly are configured (Scored)
 # 5.1.4		Ensure permissions on /etc/cron.daily are configured (Scored)

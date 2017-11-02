@@ -1,6 +1,16 @@
 # NOTE: common resource for these benchmarks
 # 3.1.1    Ensure IP forwarding is disabled (Scored)
 # 3.1.2    Ensure IP forwarding is disabled (Scored)
+# 3.2.1    Ensure source routed packets are not accepted (Scored)
+# 3.2.2    Ensure ICMP redirects are not accepted (Scored)
+# 3.2.3    Ensure secure ICMP redirects are not accepted (Scored)
+# 3.2.4    Ensure suspicious packets are logged (Scored)
+# 3.2.5    Ensure broadcast ICMP requests are ignored (Scored)
+# 3.2.6    Ensure bogus ICMP responses are ignored (Scored)
+# 3.2.7    Ensure bogus ICMP responses are ignored (Scored)
+# 3.2.8    Ensure TCP SYN Cookies is enabled (Scored)
+# 3.3.1    Ensure IPv6 router advertisements are not accepted (Scored)
+# 3.3.2    Ensure IPv6 redirects are not accepted (Scored)
 define ciscentos6::common::add_file_line (
   $filepath, $addline, $regex
 ) {
