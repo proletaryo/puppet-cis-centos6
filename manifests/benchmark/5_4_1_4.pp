@@ -1,6 +1,5 @@
 # 5.4.1.3    Ensure password expiration warning days is 7 or more (Scored)
 class ciscentos6::benchmark::5_4_1_3 {
-
   if ! defined(Exec['useradd -D -f 30']) {
     exec {'useradd -D -f 30':
       command => "useradd -D -f 30",
