@@ -8,8 +8,8 @@ class ciscentos6::benchmark::1_3_2 {
       } ->
       ciscentos6::common::add_file_line { 'crontab aide':
         filepath => '/etc/crontab',
-        addline => '0 5 \* \* \* /usr/sbin/aide --check',
-        regex => "\/usr\/sbin\/aide --check",
+        addline => '0 5 \* \* \* \/usr\/sbin\/aide --check',
+        regex => '\/usr\/sbin\/aide',
       } ->
       notify{ "CIS Benchmark 1.3.2 : remediated":
         loglevel => notice,
@@ -21,7 +21,7 @@ class ciscentos6::benchmark::1_3_2 {
   }
   else {
     ciscentos6::common::just_relay_fact_value { '1_3_2':
-      benchmark_number => '1.3_2',
+      benchmark_number => '1.3.2',
       benchmark_status => $cis_benchmark_1_3_2,
     }
   }

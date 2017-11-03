@@ -1,4 +1,5 @@
 # NOTE: common resource for these benchmarks
+# 1.4.1    Ensure permissions on bootloader config are configured (Scored)
 # 3.4.4    Ensure permissions on /etc/hosts.allow are configured (Scored)
 # 3.4.5    Ensure permissions on /etc/hosts.deny are configured (Scored)
 # 5.1.2		Ensure permissions on /etc/crontab are configured (Scored)
