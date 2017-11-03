@@ -2,12 +2,12 @@
 class ciscentos6::benchmark::4_2_2_1 {
   if defined('$cis_benchmark_4_2_2_1') {
     if $cis_benchmark_4_2_2_1 == 'failed' {   # remediate
-      exec {'enable rsyslog':
+      exec {'enable syslog-ng':
         command => "chkconfig syslog-ng off",
         path    => "/bin:/sbin",
       }
       notify{ "CIS Benchmark 4.2.2.1 : remediated":
-        require => Exec['enable rsyslog'],
+        require => Exec['enable syslog-ng'],
         loglevel => notice,
       }
     }
