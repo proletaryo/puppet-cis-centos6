@@ -3,6 +3,8 @@
 # 1.3.2    Ensure filesystem integrity is regularly checked (Scored)
 # 1.4.3    Ensure authentication required for single user mode (Scored)
 # 1.4.4    Ensure interactive boot is not enabled (Scored)
+# 1.5.1    Ensure core dumps are restricted (Scored)
+# 1.5.3    Ensure address space layout randomization (ASLR) is enabled (Scored)
 # 2.2.15    Ensure mail transfer agent is configured for local-only mode (Scored)
 # 3.1.1    Ensure IP forwarding is disabled (Scored)
 # 3.1.2    Ensure IP forwarding is disabled (Scored)
