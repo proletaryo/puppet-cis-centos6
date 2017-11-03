@@ -3,7 +3,7 @@ class ciscentos6::benchmark::3_1_1 {
   if ! defined(Ciscentos6::Common::Add_file_line['/etc/sysctl.conf']) {
     if $cis_benchmark_3_1_1 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { '/etc/sysctl.conf':
-        filepath => '/etc/sysctl.conf'
+        filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.ip_forward = 0',
         regex => '^net.ipv4.ip_forward',
       } ->

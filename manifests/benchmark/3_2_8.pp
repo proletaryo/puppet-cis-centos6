@@ -3,7 +3,7 @@ class ciscentos6::benchmark::3_2_8 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.tcp_syncookies = 1']) {
     if $cis_benchmark_3_2_8 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv4.tcp_syncookies = 1':
-        filepath => '/etc/sysctl.conf'
+        filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.tcp_syncookies = 1',
         regex => '^net.ipv4.tcp_syncookies',
       } ->

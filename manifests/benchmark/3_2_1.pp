@@ -3,12 +3,12 @@ class ciscentos6::benchmark::3_2_1 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.conf.all.accept_source_route = 0']) {
     if $cis_benchmark_3_2_1 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv4.conf.all.accept_source_route = 0':
-        filepath => '/etc/sysctl.conf'
+        filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.conf.all.accept_source_route = 0',
         regex => '^net.ipv4.conf.all.accept_source_route',
       } ->
       ciscentos6::common::add_file_line { 'net.ipv4.conf.default.accept_source_route = 0':
-        filepath => '/etc/sysctl.conf'
+        filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.conf.default.accept_source_route = 0',
         regex => '^net.ipv4.conf.default.accept_source_route',
       } ->

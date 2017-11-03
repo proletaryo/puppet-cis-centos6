@@ -3,7 +3,7 @@ class ciscentos6::benchmark::3_2_6 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.icmp_echo_ignore_broadcasts = 1']) {
     if $cis_benchmark_3_2_6 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv4.icmp_ignore_bogus_error_responses = 1':
-        filepath => '/etc/sysctl.conf'
+        filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.icmp_ignore_bogus_error_responses = 1',
         regex => '^net.ipv4.icmp_ignore_bogus_error_responses',
       } ->
