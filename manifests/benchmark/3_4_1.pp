@@ -1,6 +1,6 @@
 # 3.4.1    Ensure TCP Wrappers is installed (Scored)
 class ciscentos6::benchmark::3_4_1 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_3_4_1 == 'failed' {   # remediate
     package { 'tcp_wrappers':
       ensure => 'installed',
     } ->

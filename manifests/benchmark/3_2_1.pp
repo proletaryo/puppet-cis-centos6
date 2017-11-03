@@ -1,7 +1,7 @@
 # 3.2.1    Ensure source routed packets are not accepted (Scored)
 class ciscentos6::benchmark::3_2_1 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.conf.all.accept_source_route = 0']) {
-    if $benchmark_status == 'failed' {   # remediate
+    if $cis_benchmark_3_2_1 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv4.conf.all.accept_source_route = 0':
         filepath => '/etc/sysctl.conf'
         addline => 'net.ipv4.conf.all.accept_source_route = 0',

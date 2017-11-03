@@ -1,6 +1,6 @@
 # 2.3.2    Ensure rsh client is not installed (Scored)
 class ciscentos6::benchmark::2_3_2 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_3_2 == 'failed' {   # remediate
     package { 'rsh':
       ensure => 'purged',
     } ->

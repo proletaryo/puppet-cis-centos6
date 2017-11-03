@@ -1,6 +1,6 @@
 # 2.3.3    Ensure talk client is not installed (Scored)
 class ciscentos6::benchmark::2_3_3 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_3_3 == 'failed' {   # remediate
     package { 'talk':
       ensure => 'purged',
     } ->

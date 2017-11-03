@@ -1,6 +1,6 @@
 # 2.3.1    Ensure NIS Client is not installed (Scored)
 class ciscentos6::benchmark::2_3_1 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_3_1 == 'failed' {   # remediate
     package { 'ypbind':
       ensure => 'purged',
     } ->

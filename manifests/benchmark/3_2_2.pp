@@ -1,7 +1,7 @@
 # 3.2.2    Ensure ICMP redirects are not accepted (Scored)
 class ciscentos6::benchmark::3_2_2 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.conf.all.accept_redirects = 0']) {
-    if $benchmark_status == 'failed' {   # remediate
+    if $cis_benchmark_3_2_2 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv4.conf.all.accept_redirects = 0':
         filepath => '/etc/sysctl.conf'
         addline => 'net.ipv4.conf.all.accept_redirects = 0',

@@ -1,6 +1,6 @@
 # 2.1.5    Ensure time services are not enabled (Scored)
 class ciscentos6::benchmark::2_1_5 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_1_5 == 'failed' {   # remediate
     exec {'chkconfig time-dgram off':
       command => "chkconfig time-dgram off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P time-dgram | grep -P '\\d:on'",

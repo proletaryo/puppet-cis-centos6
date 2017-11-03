@@ -1,6 +1,6 @@
 # 2.2.6    Ensure LDAP server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_6 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_2_6 == 'failed' {   # remediate
     exec {'chkconfig slapd off':
       command => "chkconfig slapd off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P slapd | grep -P '\\d:on'",

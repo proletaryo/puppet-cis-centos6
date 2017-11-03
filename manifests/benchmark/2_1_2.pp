@@ -1,6 +1,6 @@
 # 2.1.2    Ensure daytime services are not enabled (Scored)
 class ciscentos6::benchmark::2_1_2 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_1_2 == 'failed' {   # remediate
     exec {'chkconfig daytime-dgram off':
       command => "chkconfig chargen-dgram off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P daytime-dgram | grep -P '\\d:on'",

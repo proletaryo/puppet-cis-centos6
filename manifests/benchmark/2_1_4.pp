@@ -1,6 +1,6 @@
 # 2.1.4    Ensure echo services are not enabled (Scored)
 class ciscentos6::benchmark::2_1_4 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_1_4 == 'failed' {   # remediate
     exec {'chkconfig echo-dgram off':
       command => "chkconfig echo-dgram off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P echo-dgram | grep -P '\\d:on'",

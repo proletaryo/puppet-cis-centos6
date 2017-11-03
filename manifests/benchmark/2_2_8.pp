@@ -1,6 +1,6 @@
 # 2.2.8    Ensure DNS Server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_8 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_2_8 == 'failed' {   # remediate
     exec {'chkconfig named off':
       command => "chkconfig named off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P named | grep -P '\\d:on'",

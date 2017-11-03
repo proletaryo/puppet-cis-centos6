@@ -1,6 +1,6 @@
 # 2.1.9    Ensure telnet server is not enabled (Scored)
 class ciscentos6::benchmark::2_1_9 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_1_9 == 'failed' {   # remediate
     exec {'chkconfig tftp off':
       command => "chkconfig tftp off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P tftp | grep -P '\\d:on'",

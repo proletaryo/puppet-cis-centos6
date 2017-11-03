@@ -1,6 +1,6 @@
 # 3.6.1    Ensure iptables is installed (Scored)
 class ciscentos6::benchmark::3_6_1 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_3_6_1 == 'failed' {   # remediate
     package { 'iptables':
       ensure => 'installed',
     } ->

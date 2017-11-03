@@ -1,6 +1,6 @@
 # 2.2.3    Ensure Avahi Server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_3 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_2_3 == 'failed' {   # remediate
     exec {'chkconfig avahi-daemon off':
       command => "chkconfig avahi-daemon off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P avahi-daemon | grep -P '\\d:on'",

@@ -1,7 +1,7 @@
 # 3.3.2    Ensure IPv6 redirects are not accepted (Scored)
 class ciscentos6::benchmark::3_3_2 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv6.conf.all.accept_redirects = 0']) {
-    if $benchmark_status == 'failed' {   # remediate
+    if $cis_benchmark_3_3_2 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv6.conf.all.accept_redirects = 0':
         filepath => '/etc/sysctl.conf'
         addline => 'net.ipv6.conf.all.accept_redirects = 0',

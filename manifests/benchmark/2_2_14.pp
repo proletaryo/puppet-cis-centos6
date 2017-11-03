@@ -1,6 +1,6 @@
 # 2.2.14    Ensure SNMP Server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_14 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_2_14 == 'failed' {   # remediate
     exec {'chkconfig snmpd off':
       command => "chkconfig snmpd off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P snmpd | grep -P '\\d:on'",

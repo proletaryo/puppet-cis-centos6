@@ -1,7 +1,7 @@
 # 3.1.2    Ensure packet redirect sending is disabled (Scored)
 class ciscentos6::benchmark::3_1_2 {
   if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.conf.all.log_martians = 1']) {
-    if $benchmark_status == 'failed' {   # remediate
+    if $cis_benchmark_3_1_2 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'net.ipv4.conf.all.send_redirects = 0':
         filepath => '/etc/sysctl.conf'
         addline => 'net.ipv4.conf.all.send_redirects = 0',

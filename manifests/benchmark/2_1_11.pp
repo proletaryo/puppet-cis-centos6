@@ -1,6 +1,6 @@
 # 2.1.11    Ensure xinetd is not enabled (Scored)
 class ciscentos6::benchmark::2_1_11 {
-  if $benchmark_status == 'failed' {   # remediate
+  if $cis_benchmark_2_1_11 == 'failed' {   # remediate
     exec {'chkconfig xinetd off':
       command => "chkconfig xinetd off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P xinetd | grep -P '\\d:on'",

@@ -1,7 +1,7 @@
 # 3.1.1    Ensure IP forwarding is disabled (Scored)
 class ciscentos6::benchmark::3_1_1 {
   if ! defined(Ciscentos6::Common::Add_file_line['/etc/sysctl.conf']) {
-    if $benchmark_status == 'failed' {   # remediate
+    if $cis_benchmark_3_1_1 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { '/etc/sysctl.conf':
         filepath => '/etc/sysctl.conf'
         addline => 'net.ipv4.ip_forward = 0',

@@ -1,7 +1,7 @@
 # 2.2.15    Ensure mail transfer agent is configured for local-only mode (Scored)
 class ciscentos6::benchmark::2_2_15 {
   if ! defined(Ciscentos6::Common::Add_file_line['inet_interfaces = localhost']) {
-    if $benchmark_status == 'failed' {   # remediate
+    if $cis_benchmark_2_2_15 == 'failed' {   # remediate
       ciscentos6::common::add_file_line { 'inet_interfaces = localhost':
         filepath => '/etc/postfix/main.cf'
         addline => 'inet_interfaces = localhost',
