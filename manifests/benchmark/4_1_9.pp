@@ -13,16 +13,13 @@ class ciscentos6::benchmark::4_1_9 {
       command => "echo $line2 >> /etc/audit/audit.rules",
       path    => "/bin:/sbin",
       unless  => "grep -P $line2 /etc/audit/audit.rules",
-      require => Exec['line1'],
     } ->
     exec {'line3':
       command => "echo $line3 >> /etc/audit/audit.rules",
       path    => "/bin:/sbin",
       unless  => "grep -P $line3 /etc/audit/audit.rules",
-      require => Exec['line2'],
     } ->
     notify{ "CIS Benchmark 4.1.9 : remediated":
-      require => Exec['line3'],
       loglevel => notice,
     }
   }

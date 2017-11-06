@@ -6,7 +6,6 @@ class ciscentos6::benchmark::4_2_2_1 {
       path    => "/bin:/sbin",
     } ->
     notify{ "CIS Benchmark 4.2.2.1 : remediated":
-      require => Exec['enable syslog-ng'],
       loglevel => notice,
     }
   }

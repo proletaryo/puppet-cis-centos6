@@ -8,7 +8,6 @@ class ciscentos6::benchmark::4_1_18 {
       unless  => "grep -P $line1 /etc/audit/audit.rules",
     } ->
     notify{ "CIS Benchmark 4.1.18 : remediated":
-      require => Exec['line1'],
       loglevel => notice,
     }
   }

@@ -6,7 +6,6 @@ class ciscentos6::benchmark::4_2_4 {
       path    => "/bin:/sbin",
     } ->
     notify{ "CIS Benchmark 4.2.4 : remediated":
-      require => Exec['set log permissions'],
       loglevel => notice,
     }
   }
