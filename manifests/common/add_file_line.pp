@@ -5,6 +5,8 @@
 # 1.4.4    Ensure interactive boot is not enabled (Scored)
 # 1.5.1    Ensure core dumps are restricted (Scored)
 # 1.5.3    Ensure address space layout randomization (ASLR) is enabled (Scored)
+# 1.6.1.2    Ensure the SELinux state is enforcing (Scored)
+# 1.6.1.3    Ensure SELinux policy is configured (Scored)
 # 2.2.15    Ensure mail transfer agent is configured for local-only mode (Scored)
 # 3.1.1    Ensure IP forwarding is disabled (Scored)
 # 3.1.2    Ensure IP forwarding is disabled (Scored)
