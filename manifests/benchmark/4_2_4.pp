@@ -4,7 +4,7 @@ class ciscentos6::benchmark::4_2_4 {
     exec {'set log permissions':
       command => "find /var/log -type f -exec chmod g-wx,o-rwx {} +",
       path    => "/bin:/sbin",
-    }
+    } ->
     notify{ "CIS Benchmark 4.2.4 : remediated":
       require => Exec['set log permissions'],
       loglevel => notice,
