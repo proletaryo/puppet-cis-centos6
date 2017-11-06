@@ -1,6 +1,4 @@
 # NOTE: common resource for these benchmarks
-# 4.1.1.2   Ensure system is disabled when audit logs are full (Scored)
-# 4.1.1.3   Ensure audit logs are not automatically deleted (Scored)
 # 4.2.1.3    Ensure rsyslog default file permissions configured (Scored)
 # 5.2.2     Ensure SSH Protocol is set to 2 (Scored)
 # 5.2.3     Ensure SSH LogLevel is set to INFO (Scored)
