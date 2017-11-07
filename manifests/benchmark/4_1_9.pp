@@ -1,24 +1,25 @@
 # 4.1.9    Ensure session initiation information is collected (Scored)
 class ciscentos6::benchmark::4_1_9 {
   if $cis_benchmark_4_1_9 == 'failed' {   # remediate
-    $line1 = '-w /var/run/utmp -p wa -k session'
-    $line2 = '-w /var/log/wtmp -p wa -k session'
-    $line3 = '-w /var/log/btmp -p wa -k session'
-    exec {'line1':
-      command => "echo $line1 >> /etc/audit/audit.rules",
-      path    => "/bin:/sbin",
-      unless  => "grep -P $line1 /etc/audit/audit.rules",
-    } ->
-    exec {'line2':
-      command => "echo $line2 >> /etc/audit/audit.rules",
-      path    => "/bin:/sbin",
-      unless  => "grep -P $line2 /etc/audit/audit.rules",
-    } ->
-    exec {'line3':
-      command => "echo $line3 >> /etc/audit/audit.rules",
-      path    => "/bin:/sbin",
-      unless  => "grep -P $line3 /etc/audit/audit.rules",
-    } ->
+    $filepath = '/etc/audit/audit.rules'
+    $line = [
+      '-w /var/run/utmp -p wa -k session',
+      '-w /var/log/wtmp -p wa -k session',
+      '-w /var/log/btmp -p wa -k session'
+    ]
+    $lineregex = [
+      '^-w\\s+/var/run/utmp\\s+-p\\s+wa\\s+-k\\s+session',
+      '^-w\\s+/var/log/wtmp\\s+-p\\s+wa\\s+-k\\s+session',
+      '^-w\\s+/var/log/btmp\\s+-p\\s+wa\\s+-k\\s+session'
+    ]
+    define 4_1_9 {
+      exec {"4_1_9 $title":
+        command => "echo ${line[$title]} >> $filepath",
+        path    => "/bin:/sbin",
+        unless  => "grep -P ${lineregex[$title]} $filepath",
+      }
+    }
+    4_1_9 { [0, 1, 2]: } ->
     notify{ "CIS Benchmark 4.1.9 : remediated":
       loglevel => notice,
     }
