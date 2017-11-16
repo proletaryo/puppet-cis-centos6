@@ -11,6 +11,14 @@
 # 5.1.7		Ensure permissions on /etc/cron.d are configured (Scored)
 # 5.1.8		Ensure at/cron is restricted to authorized users (Scored)
 # 5.2.1    Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
+# 6.1.2    Ensure permissions on /etc/passwd are configured (Scored)
+# 6.1.3    Ensure permissions on /etc/shadow are configured (Scored)
+# 6.1.4    Ensure permissions on /etc/group are configured (Scored)
+# 6.1.5    Ensure permissions on /etc/gshadow are configured (Scored)
+# 6.1.6    Ensure permissions on /etc/passwd- are configured (Scored)
+# 6.1.7    Ensure permissions on /etc/shadow- are configured (Scored)
+# 6.1.8    Ensure permissions on /etc/group- are configured (Scored)
+# 6.1.9    Ensure permissions on /etc/gshadow- are configured (Scored)
 define ciscentos6::common::set_file_permissions ( $benchmark_number, $benchmark_status, $permissions) {
   if defined('$benchmark_status') {
     if $benchmark_status == 'failed' {   # remediate
