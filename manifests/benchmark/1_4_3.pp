@@ -1,8 +1,8 @@
 # 1.4.3    Ensure authentication required for single user mode (Scored)
 class ciscentos6::benchmark::1_4_3 {
-  if ! defined(Ciscentos6::Common::Add_file_line['SINGLE=\/sbin\/sulogin']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_4_3']) {
     if $cis_benchmark_1_4_3 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'SINGLE=\/sbin\/sulogin':
+      ciscentos6::common::add_file_line { '1_4_3':
         filepath => '/etc/sysconfig/init',
         addline => 'SINGLE=\/sbin\/sulogin',
         regex => '^SINGLE',

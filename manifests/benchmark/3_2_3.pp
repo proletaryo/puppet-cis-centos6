@@ -1,18 +1,18 @@
 # 3.2.3    Ensure secure ICMP redirects are not accepted (Scored)
 class ciscentos6::benchmark::3_2_3 {
-  if ! defined(Ciscentos6::Common::Add_file_line['net.ipv4.conf.all.accept_redirects = 0']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['3_2_3 net.ipv4.conf.all.accept_redirects = 0']) {
     if $cis_benchmark_3_2_3 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'net.ipv4.conf.all.secure_redirects = 0':
+      ciscentos6::common::add_file_line { '3_2_3 net.ipv4.conf.all.secure_redirects = 0':
         filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.conf.all.secure_redirects = 0',
         regex => '^net.ipv4.conf.all.secure_redirects',
       } ->
-      ciscentos6::common::add_file_line { 'net.ipv4.conf.default.secure_redirects = 0':
+      ciscentos6::common::add_file_line { '3_2_3 net.ipv4.conf.default.secure_redirects = 0':
         filepath => '/etc/sysctl.conf',
         addline => 'net.ipv4.conf.default.secure_redirects = 0',
         regex => '^net.ipv4.conf.default.secure_redirects',
       } ->
-      exec {'set the active kernel parameters':
+      exec {'3_2_3 set the active kernel parameters':
         command => "sysctl -w net.ipv4.conf.all.secure_redirects=0; sysctl -w net.ipv4.conf.default.secure_redirects=0; sysctl -w net.ipv4.route.flush=1",
         path    => "/bin:/sbin",
       } ->

@@ -4,7 +4,7 @@ class ciscentos6::benchmark::1_3_1 {
     package { 'aide':
       ensure => 'installed',
     } ->
-    exec{'initialize aide':
+    exec{'1_3_1 initialize aide':
       command => "aide --init; mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz",
       path    => "/bin:/sbin",
     } ->

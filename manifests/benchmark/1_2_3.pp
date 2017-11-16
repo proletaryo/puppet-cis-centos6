@@ -1,13 +1,13 @@
 # 1.2.3    Ensure gpgcheck is globally activated (Scored)
 class ciscentos6::benchmark::1_2_3 {
-  if ! defined(Ciscentos6::Common::Add_file_line['gpgcheck']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_2_3']) {
     if $cis_benchmark_1_2_3 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'gpgcheck':
+      ciscentos6::common::add_file_line { '1_2_3':
         filepath => '/etc/yum.conf',
         addline => 'gpgcheck=1',
         regex => '^gpgcheck',
       } ->
-      exec{'gpgcheck yum.repos':
+      exec{'1_2_3 gpgcheck yum.repos':
         command => "sed -i '/^gpgcheck=0/c\\gpgcheck=1' /etc/yum.repos.d/*",
         path    => "/bin:/sbin",
         onlyif  => "grep -P ^gpgcheck /etc/yum.repos.d/*",

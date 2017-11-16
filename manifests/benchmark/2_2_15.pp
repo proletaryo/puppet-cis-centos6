@@ -1,13 +1,13 @@
 # 2.2.15    Ensure mail transfer agent is configured for local-only mode (Scored)
 class ciscentos6::benchmark::2_2_15 {
-  if ! defined(Ciscentos6::Common::Add_file_line['inet_interfaces = localhost']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['2_2_15']) {
     if $cis_benchmark_2_2_15 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'inet_interfaces = localhost':
+      ciscentos6::common::add_file_line { '2_2_15':
         filepath => '/etc/postfix/main.cf'
         addline => 'inet_interfaces = localhost',
         regex => '^inet_interfaces',
       } ->
-      exec {'set the active kernel parameters':
+      exec {'2_2_15 set the active kernel parameters':
         command => "service postfix restart",
         path    => "/bin:/sbin",
       } ->

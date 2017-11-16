@@ -1,7 +1,7 @@
 # 2.2.16    Ensure NIS Server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_16 {
   if $cis_benchmark_2_2_16 == 'failed' {   # remediate
-    exec {'chkconfig ypserv off':
+    exec {'2_2_16 chkconfig ypserv off':
       command => "chkconfig ypserv off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P ypserv | grep -P '\\d:on'",
       path    => "/bin:/sbin",

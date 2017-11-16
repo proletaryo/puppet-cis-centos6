@@ -1,7 +1,7 @@
 # 2.2.9    Ensure FTP Server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_9 {
   if $cis_benchmark_2_2_9 == 'failed' {   # remediate
-    exec {'chkconfig vsftpd off':
+    exec {'2_2_9 chkconfig vsftpd off':
       command => "chkconfig vsftpd off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P vsftpd | grep -P '\\d:on'",
       path    => "/bin:/sbin",

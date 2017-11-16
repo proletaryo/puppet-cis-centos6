@@ -1,7 +1,7 @@
 # 4.2.2.3    Ensure syslog-ng default file permissions configured (Scored)
 class ciscentos6::benchmark::4_2_2_3 {
   if $cis_benchmark_4_2_2_3 == 'failed' {   # remediate
-    exec {'/etc/syslog-ng/syslog-ng.conf':
+    exec {'4_2_2_3':
       command => "sed -i '/^options/ s/perm([0-9]*)/perm\(0640\)/' /etc/syslog-ng/syslog-ng.conf",
       path    => "/bin:/sbin",
     } ->

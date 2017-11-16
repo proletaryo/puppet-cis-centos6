@@ -1,7 +1,7 @@
 # 5.1.1    Ensure cron daemon is enabled (Scored)
 class ciscentos6::benchmark::5_1_1 {
   if $cis_benchmark_5_1_1 == 'failed' {   # remediate
-    exec {'enable crond':
+    exec {'5_1_1 enable crond':
       command => "chkconfig crond off",
       path    => "/bin:/sbin",
     } ->

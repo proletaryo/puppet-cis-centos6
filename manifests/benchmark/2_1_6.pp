@@ -1,17 +1,17 @@
 # 2.1.6    Ensure rsh server is not enabled (Scored)
 class ciscentos6::benchmark::2_1_6 {
   if $cis_benchmark_2_1_6 == 'failed' {   # remediate
-    exec {'chkconfig rexec off':
+    exec {'2_1_6 chkconfig rexec off':
       command => "chkconfig rexec off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P rexec | grep -P '\\d:on'",
       path    => "/bin:/sbin",
     } ->
-    exec {'chkconfig rlogin off':
+    exec {'2_1_6 chkconfig rlogin off':
       command => "chkconfig rlogin off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P rlogin | grep -P '\\d:on'",
       path    => "/bin:/sbin",
     } ->
-    exec {'chkconfig rsh off':
+    exec {'2_1_6 chkconfig rsh off':
       command => "chkconfig time-stream off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P rsh | grep -P '\\d:on'",
       path    => "/bin:/sbin",

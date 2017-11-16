@@ -1,8 +1,8 @@
 # 1.4.4    Ensure interactive boot is not enabled (Scored)
 class ciscentos6::benchmark::1_4_4 {
-  if ! defined(Ciscentos6::Common::Add_file_line['PROMPT=no']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_4_4']) {
     if $cis_benchmark_1_4_4 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'PROMPT=no':
+      ciscentos6::common::add_file_line { '1_4_4':
         filepath => '/etc/sysconfig/init',
         addline => 'PROMPT=no',
         regex => '^PROMPT',

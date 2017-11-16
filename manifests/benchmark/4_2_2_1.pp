@@ -1,7 +1,7 @@
 # 4.2.2.1    Ensure syslog-ng service is enabled (Scored)
 class ciscentos6::benchmark::4_2_2_1 {
   if $cis_benchmark_4_2_2_1 == 'failed' {   # remediate
-    exec {'enable syslog-ng':
+    exec {'4_2_2_1 enable syslog-ng':
       command => "chkconfig syslog-ng on",
       path    => "/bin:/sbin",
     } ->

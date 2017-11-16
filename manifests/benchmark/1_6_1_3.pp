@@ -1,8 +1,8 @@
 # 1.6.1.3    Ensure SELinux policy is configured (Scored)
 class ciscentos6::benchmark::1_6_1_3 {
-  if ! defined(Ciscentos6::Common::Add_file_line['SELINUXTYPE=targeted']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_6_1_3']) {
     if $cis_benchmark_1_6_1_3 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'SELINUXTYPE=targeted':
+      ciscentos6::common::add_file_line { '1_6_1_3':
         filepath => '/etc/selinux/config',
         addline => 'SELINUXTYPE=targeted',
         regex => '^SELINUXTYPE',

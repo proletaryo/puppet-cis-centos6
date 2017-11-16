@@ -1,8 +1,8 @@
 # 1.6.1.2    Ensure the SELinux state is enforcing (Scored)
 class ciscentos6::benchmark::1_6_1_2 {
-  if ! defined(Ciscentos6::Common::Add_file_line['SELINUX=enforcing']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_6_1_2']) {
     if $cis_benchmark_1_6_1_2 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { 'SELINUX=enforcing':
+      ciscentos6::common::add_file_line { '1_6_1_2':
         filepath => '/etc/selinux/config',
         addline => 'SELINUX=enforcing',
         regex => '^SELINUX',

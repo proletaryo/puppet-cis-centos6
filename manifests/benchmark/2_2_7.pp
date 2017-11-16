@@ -1,12 +1,12 @@
 # 2.2.7    Ensure NFS and RPC are not enabled (Scored)
 class ciscentos6::benchmark::2_2_7 {
   if $cis_benchmark_2_2_7 == 'failed' {   # remediate
-    exec {'chkconfig nfs off':
+    exec {'2_2_7 chkconfig nfs off':
       command => "chkconfig nfs off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P nfs | grep -P '\\d:on'",
       path    => "/bin:/sbin",
     } ->
-    exec {'chkconfig rpcbind off':
+    exec {'2_2_7 chkconfig rpcbind off':
       command => "chkconfig rpcbind off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P rpcbind | grep -P '\\d:on'",
       path    => "/bin:/sbin",

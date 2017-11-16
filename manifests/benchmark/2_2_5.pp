@@ -1,7 +1,7 @@
 # 2.2.5    Ensure DHCP Server is not enabled (Scored)
 class ciscentos6::benchmark::2_2_5 {
   if $cis_benchmark_2_2_5 == 'failed' {   # remediate
-    exec {'chkconfig dhcpd off':
+    exec {'2_2_5 chkconfig dhcpd off':
       command => "chkconfig dhcpd off",
       onlyif => "chkconfig --list 2>/dev/null | grep -P dhcpd | grep -P '\\d:on'",
       path    => "/bin:/sbin",

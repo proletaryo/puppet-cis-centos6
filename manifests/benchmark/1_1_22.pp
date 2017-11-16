@@ -1,7 +1,7 @@
 # 1.1.22    Disable Automounting (Scored)
 class ciscentos6::benchmark::1_1_22 {
   if $cis_benchmark_1_1_22 == 'failed' {   # remediate
-    exec {'chkconfig autofs off':
+    exec {'1_1_22 chkconfig autofs off':
       command => "chkconfig autofs off",
       path    => "/bin:/sbin",
     } ->

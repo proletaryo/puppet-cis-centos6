@@ -1,18 +1,18 @@
 # 1.5.1    Ensure core dumps are restricted (Scored)
 class ciscentos6::benchmark::1_5_1 {
-  if ! defined(Ciscentos6::Common::Add_file_line['* hard core 0']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_5_1 * hard core 0']) {
     if $cis_benchmark_1_5_1 == 'failed' {   # remediate
-      ciscentos6::common::add_file_line { '* hard core 0':
+      ciscentos6::common::add_file_line { '1_5_1 * hard core 0':
         filepath => '/etc/security/limits.conf',
         addline => '\* hard core 0',
         regex => 'hard.+core',
       } ->
-      ciscentos6::common::add_file_line { 'fs.suid_dumpable = 0':
+      ciscentos6::common::add_file_line { '1_5_1 fs.suid_dumpable = 0':
         filepath => '/etc/sysctl.conf',
         addline => 'fs.suid_dumpable = 0',
         regex => '^fs\.suid_dumpable',
       } ->
-      exec {'sysctl -w fs.suid_dumpable=0':
+      exec {'1_5_1 sysctl -w fs.suid_dumpable=0':
         command => "sysctl -w fs.suid_dumpable=0",
         path    => "/bin:/sbin",
       } ->

@@ -1,12 +1,12 @@
 # 1.3.2    Ensure filesystem integrity is regularly checked (Scored)
 class ciscentos6::benchmark::1_3_2 {
-  if ! defined(Ciscentos6::Common::Add_file_line['crontab aide']) {
+  if ! defined(Ciscentos6::Common::Add_file_line['1_3_2 crontab aide']) {
     if $cis_benchmark_1_3_2 == 'failed' {   # remediate
-      exec{'crontab -u root -e':
+      exec{'1_3_2 crontab -u root -e':
         command => "crontab -u root -e",
         path    => "/bin:/sbin",
       } ->
-      ciscentos6::common::add_file_line { 'crontab aide':
+      ciscentos6::common::add_file_line { '1_3_2 crontab aide':
         filepath => '/etc/crontab',
         addline => '0 5 \* \* \* \/usr\/sbin\/aide --check',
         regex => '\/usr\/sbin\/aide',
